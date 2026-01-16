@@ -1,0 +1,98 @@
+---
+title: "BST413 - Bayesian Inference"
+description: "University of Rochester, Spring 2026"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+# Administrivia
+
+TH 11:00-12:40, SRB 1402
+<br>
+**Instructor**: Tanzy Love
+<br>
+**Website**: https://bst-urmc.github.io/bst413-spring2026-site/
+<br>
+[**Syllabus**](static/syllabus413-2026.pdf)
+
+# Content
+
+0. [Introduction](lecture/l00-intro.html)
+1. [Meet the toolkit](lecture/l01-meet-toolkit.html)
+    * Invites to GitHub class room are on [blackboard](https://learn.rochester.edu)
+    * Req readings: [r4ds](https://r4ds.hadley.nz/) 3.1-3.5, 4. 
+    * Optional readings: https://happygitwithr.com/
+* Resources: 
+    1. [install GIT](https://happygitwithr.com/install-git.html)
+    2. [install *base* R](https://cran.r-project.org/)
+    3. [install RStudio](https://www.rstudio.com/products/rstudio/download/#download)
+    * Lab 0 [instructions](hw_lab_instruction/lab00-demonstration/lab00-hello-class.html) and repo (accept GH classroom invite in Blackboard).
+2. [ggplot(i)](lecture/l02-ggplot2-i.html)
+    * Lab 1 [instructions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/VJwscJG1)). Due 5pm, Sept 11.
+    * Lab 1 [solutions](hw_lab_instruction/lab01-hello-r/lab01.html)
+3.  [dplyr(i)](lecture/l03-transform-dplyr-i.html)
+    * Continue working on Lab 1
+    * HW 1 assigned.  [instructions](hw_lab_instruction/hw-01-airbnb/hw-01-airbnb.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/DSGIBgl4)).  Due 5pm EDT, Sept 16.
+    * HW 1 [solutions](hw_lab_instruction/hw-01-airbnb/hw-01.html)
+4.  [Data types in R](lecture/l04-data-types.html).
+    *  [Lab 2](hw_lab_instruction/lab02-merge-conflict/lab02-merge-conflict.html). You will need to accept the [invitation](https://classroom.github.com/a/d0eW0EO8).
+Due 5pm, Sept 18.
+    * Lab 2 [solutions](hw_lab_instruction/lab02-merge-conflict/lab-02.html)
+5.  [Reshaping and combining data frames](lecture/l05a-reshape-merge.html).
+6.  [Advanced dplyr(ii)](lecture/l05b-advanced-dplyr.html)
+    *  [Lab 3](hw_lab_instruction/lab03-laquinta-uno/lab03-laquinta-uno.html).  To be completed in same group as lab 2, [invitation here](https://classroom.github.com/a/KvOILDqa). Due 5pm, Sep 25.
+    * Lab 3 [solutions](hw_lab_instruction/lab03-laquinta-uno/lab-03.html)
+7.  [Factors and dates](lecture/l07-factors-dates.html)
+    * Continue working on Lab 3
+    * HW 2 assigned.  [instructions](hw_lab_instruction/hw02-accidents/hw02-accidents.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/bvx0Xooy)).  Due 5pm EDT, Sep 30.
+    * HW 2 [solutions](hw_lab_instruction/hw02-accidents/hw02.html)
+8.  Effective data visualization [(i)](lecture/03a2-tips-for-effective-dataviz.pdf) [(ii)](lecture/03b-tips-for-effective-dataviz.pdf) [video](https://youtu.be/ZrifrBvFWgg)
+    * Turn in lab 3.
+9. [Data from files](lecture/l09-data-from-files.html)
+    *   Repository for lecture 9 [here](https://classroom.github.com/a/Dc1MkHq9) will not be graded, but gets you everything you need at once.
+    *  [Lab 4](hw_lab_instruction/lab04-laquinta-dos/lab04-laquinta-dos.html).  New groups! At least one new teammate for each person.
+    [Invitation here](https://classroom.github.com/a/ZG4bwsD8). Due 5pm, Oct 7.
+    * Lab 4 [solutions](hw_lab_instruction/lab04-laquinta-dos/lab04.html)
+10. [styleguide](lecture/l06-style.html)
+    * Finish lab 4.
+11. [Text processing and Regular Expressions](lecture/l10-text.html)   
+    * HW 3 assigned.  [instructions](hw_lab_instruction/hw03-fatal-geography/hw03-fatal-geography.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/_NYapbxO)).  Due 5pm EDT, Oct 14.
+    * HW 3 [solutions](hw_lab_instruction/hw03-fatal-geography/hw03.html)
+12. [Text analysis](lecture/l10-text-ii.html)   
+    *  [Lab 5](hw_lab_instruction/lab05-sadplots/lab05-sadplots.html).  Pair up; you might want to take turns Pull-Committing because changing figures can cause extra GIT problems. [Invitation here](https://classroom.github.com/a/GrR3CQ2R). Due 5pm, Oct 18.
+    * Lab 5 [solutions](hw_lab_instruction/lab05-sadplots/lab05.html)
+    *  Reading: [r4ds chapter 14](https://r4ds.had.co.nz/strings.html)
+13. [Matrices, indexing, linear algebra](lecture/l11-linear-algebra-indexing.html)
+    * Finish Lab 5
+14. [Functions i](lecture/l12-functions-i.html). 
+    *   [Lab 6](hw_lab_instruction/lab06-covid-times/lab06-covid-times.html), make any groups as you like. [Invitation here](https://classroom.github.com/a/wSw6fhiZ). Due 5pm, Oct 30.
+    * Lab 6 [solutions](hw_lab_instruction/lab06-covid-times/lab06.html)
+15. [Functions ii and iteration](lecture/l13-functions-ii.html)
+    *  HW 4 assigned.  [instructions](hw_lab_instruction/hw05-modeling-gss/hw-04-modeling-gss.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/6MNDuLCW)).  Due 5pm EDT, Nov 4.
+    * HW 4 [solutions](hw_lab_instruction/hw05-modeling-gss/hw-04.html)
+    * Work on Lab 6
+16.  [Knitr tricks and debugging](lecture/l14-debugging.html)
+
+    * Work on Lab 6
+17.  [Linear models](lecture/l15-linear-models.html)
+
+    * Work on Lab 6
+18.  [Multivariate linear models](lecture/l16-multivariate-lm.html)
+<!-- 19.   [Multivariate linear models and Prediction](lecture/l16-crossv-lm.html) [video link](https://rochester.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c0310bc9-e6f7-40b6-9f22-af4e012d961e) -->
+
+    *  Work on Lab 6
+19.  [Prediction and logistic regression](lecture/l17-prediction-logistic.html)
+20.   No class 11/6, work on your final exam.
+* Final Exam. Remember I will be looking at the `.md` for results and the `.Rmd` for your code. [instructions](hw_lab_instruction/final-modeling.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/v_2aITIX)).  Due 5pm EDT, Nov 7.
+21.  [Ensemble models](lecture/l20-trees-and-forests.html) extra stuff from
+[Matt Corsetti Thesis](lecture/l20/Corsetti_Thesis_Oral_Presentation.pdf)
