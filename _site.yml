@@ -1,0 +1,19 @@
+name: "website"
+title: "BST413 - Bayesian Inference"
+description: |
+  BST413 - Bayesian Inference
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    # - text: "About"
+    #   href: about.html
+    - text: "Cheatsheets"
+      href: cheatsheetlist.html
+      # href: https://www.rstudio.com/resources/cheatsheets/
+    #- text: "Course style guide"
+    #  href: https://urmc-bst.github.io/style/index.html
+output: distill::distill_article
+#include: "static/"
+exclude: ["renv/", "renv.lock", ".Rproj.user", ".DS_Store"]
