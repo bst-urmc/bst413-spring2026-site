@@ -1,0 +1,102 @@
+---
+title: "BST413  Lecture 0: Class intro"
+author: "Tanzy Love based on notes of Andrew McDavid and Sally Thurston"
+institute: "U of Rochester"
+date: "2026-Jan-15 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - css/lexis.css
+      - css/lexis-fonts.css
+    lib_dir: libs
+    seal: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: ['ur-title', 'center', 'middle']
+      ratio: "3:2"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+
+# Administrivia
+
+## Class website
+
+https://bst-urmc.github.io/bst413-spring2026-site/
+
+**Lecture, homeworks and lab will be provided here**
+
+## Blackboard
+
+https://learn.rochester.edu
+
+**Only used as a gradebook, announcements, and posting class handouts**
+
+---
+
+## Course communication
+
+-  Tanzy_Love@urmc.rochester.edu
+-  For assignments, you are encouraged to use email
+-  For private matters (grading disputes, etc), use email
+-  I am available to set up individual appointments by email.
+
+---
+
+## Textbooks
+
+All materials are available freely online.   Some also have a deadtree version available for purchase.
+
+-  The required text is: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB “Bayesian Data Analysis”, third edition, CRC Press, 2014.  
+-  It is also available as a free eBook through URLibraries
+ - - Go to library.rochester.edu, enter the title or ISBN (9781439840955) in the search box
+ - - then click “Full Text Online” in the matching results
+ - - It’s offered through ProQuest and Safari 
+
+---
+
+# Overview
+
+Bayesian Inference fundamentals with an emphasis on congugate models, hierarchical models, and MCMC computing. 
+
+-  Assignments (65%)
+.small[~bi-weekly.  Homework will be completed out-of-class]
+-  Participation / Attendance (5%)
+.small[Actively attending class, completing periodic quizzes (delivered in-class) to check understanding.]
+-  in class Midterm Exam (15%)
+.small[A closed book, no-collaboration-permitted midterm exam will be given about 1/2 way thru the class.]
+-  Final Project (15%)
+.small[A final project (individual work) will have three parts: proposal paragraph, public presentation, and final write-up.]
+
+
+---
+
+# Other syllabus items
+
+## Homework and github usage
+
+* Homework will be posted, turned-in, and graded on github classrooms.
+* We will shortly discuss logistics of this and how your use of this will be a component of your grade
+* I will sometimes accept a late assignments if I see progress and a consistent commit history in that assignment. If I do not see any progress in an assignment, I will not accept a late submission.
+
+---
+
+## Academic honesty and programming
+
+1.  You may generally work together<sup>1</sup>.
+2.  You may generally google it, but cite your sources and see the next item.
+3.  Write your own solutions and *own code*.  **This generally means no copy-paste!**  Let's look at [the syllabus](../static/syllabus413-2026.pdf) for complete details.
+
+
+### Code of conduct
+Respect each other<sup>2</sup>.  The UR harassment and discrimination policy applies<sup>3</sup>.
+
+.footnote[[1] Exception: final project!  [2] [Student handbook](http://www.rochester.edu/college/cscm/assets/pdf/standards_studentconduct.pdf)  [3] [Policy 106](http://www.rochester.edu/working/hr/policies/pdfpolicies/106.pdf)
+]
