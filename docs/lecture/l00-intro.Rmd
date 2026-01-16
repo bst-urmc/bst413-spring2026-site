@@ -56,9 +56,9 @@ All materials are available freely online.   Some also have a deadtree version a
 
 -  The required text is: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB “Bayesian Data Analysis”, third edition, CRC Press, 2014.  
 -  It is also available as a free eBook through URLibraries
- - - Go to library.rochester.edu, enter the title or ISBN (9781439840955) in the search box
- - - then click “Full Text Online” in the matching results
- - - It’s offered through ProQuest and Safari 
+ - Go to library.rochester.edu, enter the title or ISBN (9781439840955) in the search box
+ - Then click “Full Text Online” in the matching results
+ - It’s offered through ProQuest and Safari 
 
 ---
 

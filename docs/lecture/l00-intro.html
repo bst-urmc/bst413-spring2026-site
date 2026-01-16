@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BST413 Lecture 0: Class intro</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tanzy Love based on notes of Andrew McDavid and Sally Thurston" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/lexis.css" type="text/css" />
+    <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: ur-title, center, middle, title-slide
+
+.title[
+# BST413 Lecture 0: Class intro
+]
+.author[
+### Tanzy Love based on notes of Andrew McDavid and Sally Thurston
+]
+.institute[
+### U of Rochester
+]
+.date[
+### 2026-Jan-15 (updated: 2026-01-16)
+]
+
+---
+
+
+
+
+
+
+# Administrivia
+
+## Class website
+
+https://bst-urmc.github.io/bst413-spring2026-site/
+
+**Lecture, homeworks and lab will be provided here**
+
+## Blackboard
+
+https://learn.rochester.edu
+
+**Only used as a gradebook, announcements, and posting class handouts**
+
+---
+
+## Course communication
+
+-  Tanzy_Love@urmc.rochester.edu
+-  For assignments, you are encouraged to use email
+-  For private matters (grading disputes, etc), use email
+-  I am available to set up individual appointments by email.
+
+---
+
+## Textbooks
+
+All materials are available freely online.   Some also have a deadtree version available for purchase.
+
+-  The required text is: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB “Bayesian Data Analysis”, third edition, CRC Press, 2014.  
+-  It is also available as a free eBook through URLibraries
+ - Go to library.rochester.edu, enter the title or ISBN (9781439840955) in the search box
+ - Then click “Full Text Online” in the matching results
+ - It’s offered through ProQuest and Safari 
+
+---
+
+# Overview
+
+Bayesian Inference fundamentals with an emphasis on congugate models, hierarchical models, and MCMC computing. 
+
+-  Assignments (65%)
+.small[~bi-weekly.  Homework will be completed out-of-class]
+-  Participation / Attendance (5%)
+.small[Actively attending class, completing periodic quizzes (delivered in-class) to check understanding.]
+-  in class Midterm Exam (15%)
+.small[A closed book, no-collaboration-permitted midterm exam will be given about 1/2 way thru the class.]
+-  Final Project (15%)
+.small[A final project (individual work) will have three parts: proposal paragraph, public presentation, and final write-up.]
+
+
+---
+
+# Other syllabus items
+
+## Homework and github usage
+
+* Homework will be posted, turned-in, and graded on github classrooms.
+* We will shortly discuss logistics of this and how your use of this will be a component of your grade
+* I will sometimes accept a late assignments if I see progress and a consistent commit history in that assignment. If I do not see any progress in an assignment, I will not accept a late submission.
+
+---
+
+## Academic honesty and programming
+
+1.  You may generally work together&lt;sup&gt;1&lt;/sup&gt;.
+2.  You may generally google it, but cite your sources and see the next item.
+3.  Write your own solutions and *own code*.  **This generally means no copy-paste!**  Let's look at [the syllabus](../static/syllabus413-2026.pdf) for complete details.
+
+
+### Code of conduct
+Respect each other&lt;sup&gt;2&lt;/sup&gt;.  The UR harassment and discrimination policy applies&lt;sup&gt;3&lt;/sup&gt;.
+
+.footnote[[1] Exception: final project!  [2] [Student handbook](http://www.rochester.edu/college/cscm/assets/pdf/standards_studentconduct.pdf)  [3] [Policy 106](http://www.rochester.edu/working/hr/policies/pdfpolicies/106.pdf)
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "3:2"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
