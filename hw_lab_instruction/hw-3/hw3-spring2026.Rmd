@@ -106,16 +106,18 @@ as we did in class. The marginal posterior for log(α + β) and log(α/β) could
 a. Write out a model in which the number of bicycles at location j (for j = 1, · · · , J)
 is $y_j$ ∼ Binomial($n_j$ , $θ_j$ ), and $θ_j$ ∼ Beta(α, β). Use the noninformative prior
 for α and β that we discussed in class for the rat tumor example. That is,
-$p(α, β) = (α + β)^{−5/2}$ . Write down three posterior distributions: 
+$p(α, β) = (α + β)^{−5/2}$. 
+
+Write down three posterior distributions: 
  i. p(θ, α, β | y)
- ii, p(θ | α, β, y)
- iii. p(α, β | y).
+ ii. p(θ | α, β, y)
+ iii. p(α, β | y)
  
 b. Compute the marginal posterior density of log(α + β) and
 log(α/β) on a grid, and make a contour plot of this joint posterior. You should
 figure out reasonable values to use for the boundary of the grid. Show your process
 of finding decent values by including contour plots using your initial grid. You
-can make use of the code snippet, bicycles-snippet.R, which sets up the program
+can make use of the code snippet, bicycles-snippet.R, which calculates the probabilities on the right scale 
 for you and includes the contour plot. You just have to come up with reasonable
 values.
 
