@@ -198,70 +198,84 @@ The output will be in the file markdown <code>.md</code> file with the same name
 </div>
 <div id="packages" class="section level2">
 <h2>Packages</h2>
-<p>We’ll use the <strong>tidyverse</strong> package for much of the data wrangling and visualisation. The data lives on the course website, and is loaded below.
-These packages may be already installed, if you’ve been doing earlier coursework.
+<p>It’s usually a good idea to install packages in the command line and to load them in a header so you can see what they are.
 You can load them by running the following in your Console:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>Load the <code>nycbnb</code> data.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>nycbnb <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://urmc-bst.github.io/bst430-fall2021-site/hw_lab_instruction/hw-01-airbnb/data/nylistings.csv&quot;</span>)</span></code></pre></div>
-<p>The data is loaded in the last code chunk in your template into an object called <code>nycbnb</code>.</p>
-<p>You can view the dataset as a spreadsheet using the <code>View()</code> function.
-Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…).
-When you run this in the console, you’ll see the following <strong>data viewer</strong> window pop up.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">View</span>(nycbnb)</span></code></pre></div>
-<p>You can find out more about the dataset by inspecting its data dictionary, available here: <a href="https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit#gid=982310896" class="uri">https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit#gid=982310896</a>, and you can read more about the project that collected it here: <a href="http://insideairbnb.com/" class="uri">http://insideairbnb.com/</a>.</p>
-</div>
-</div>
-<div id="exercises" class="section level1">
-<h1>Exercises</h1>
-<p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Hint:</strong> The Markdown Quick Reference sheet has an
-example of inline R code. You can access it from the Help menu in
-RStudio. You can also look at the markdown cheatsheet available on the
-course website.</span></span></p>
-<ol style="list-style-type: decimal">
-<li>How many observations (rows) does the dataset have? Instead of hard coding the number in your answer, use inline code.</li>
-<li>Run <code>View(nycbnb)</code> in your Console to view the data in the data viewer. What does each row in the dataset represent?</li>
-</ol>
-<p>🧶 ✅ ⬆️ <em>Knit,</em> <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
-<p>Each column represents a variable.
-We can get a list of the variables in the data frame using the <code>names()</code> function.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">names</span>(nycbnb)</span></code></pre></div>
-<ol start="3" style="list-style-type: decimal">
-<li>Create a faceted histogram where each facet represents a neighborhood and displays the distribution of Airbnb prices in that neighborhood. Think critically about whether it makes more sense to stack the facets on top of each other in a column, lay them out in a row, or wrap them around. Along with your visualization, include your reasoning for the layout you chose for your facets.</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ___, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ___)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> ___) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>___) <span class="co"># or facet_grid...</span></span></code></pre></div>
-<p>Let’s de-construct this code:</p>
-<ul>
-<li><code>ggplot()</code> is the function we are using to build our plot, in layers.</li>
-<li>In the first layer we always define the data frame as the first argument. Then, we define the mappings between the variables in the dataset and the <strong>aes</strong>thetics of the plot (e.g. x and y coordinates, colors, etc.).</li>
-<li>In the next layer we represent the data with <strong>geom</strong>etric shapes, in this case with a histogram. You should decide what makes a reasonable bin width for the histogram by trying out a few options.</li>
-<li>In the final layer we facet the data by neighborhood.</li>
-</ul>
-<p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files (including the <code>hw-01_files</code> folder) so that your Git pane is cleared up afterwards.</em></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Use a single pipeline to identify the neighborhoods with the top five median listing prices. Then, in another pipeline filter the data for these five neighborhoods and make density plots (<code>geom_density</code>) of the distributions of listing prices in these five neighborhoods. In a third pipeline calculate the minimum, mean, median, standard deviation, IQR, maximum listing price, and the number of listings, in each of these neighborhoods. Use the visualization and the summary statistics to describe the distribution of listing prices in the neighborhoods. (Your answer will include three pipelines, one of which ends in a visualization, and a narrative.)</li>
-<li>Create a visualization that will help you compare the distribution of review scores (<code>review_scores_rating</code>) across neighborhoods. You get to decide what type of visualization to create and there is more than one correct answer! In your answer, include a brief interpretation of how Airbnb guests rate properties in general and how the neighborhoods compare to each other in terms of their ratings.</li>
+<div id="bioassay" class="section level2">
+<h2>1. Bioassay</h2>
+<p>I included the program bioassay.r in your assignment repository. It is an R program to carry out most
+of the analysis of the bioassay data discussed at the end of chapter 3 (I did not write
+this program). The program is not well-documented.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Paste the program into the next r chunk and document what it does in sufficient detail for an
+outside reader to understand what it does. I want you to edit the code itself, and
+add comments so that someone else reading your comments can understand the
+code. Also: fix the program so that the warning message does not occur, and fix
+any other mistakes you notice, and/or make improvements. If you fix or improve
+something, note what changes you have made and why.</p></li>
+<li><p>Write down the model (likelihood, prior) from the course notes or the R code.</p></li>
+<li><p>Write a stan model (plain text or a set of text lines in R code) to fit the model for the bioassay analysis. Note: Instead of a flat prior, you can use the default priors for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</p></li>
+<li><p>Run either the program in (a) or in (c) for 1000 iterations. You will have samples
+from the joint posterior of α and β. Make a contour plot from these samples.</p></li>
+<li><p>What percent of the posterior draws have β &gt; 0? What does β &gt; 0 mean in the context of this problem?</p></li>
+<li><p>Using only the draws of β &gt; 0, print the posterior median and a 95% posterior
+interval for the LD50 (defined in the notes) and make a histogram of the LD50.</p></li>
+<li><p>Suppose instead of an uninformative prior for α and β, we wanted to use the
+priors α ∼ N (0, 4) and β ∼ N (0, 100), with α and β independent a priori. How
+would the code be modified (in (a) and in (c))? Ideally you would answer this by
+showing the code snippet that would be different. At the least, try to explain what change is needed.
+<strong>Note:</strong> You do not have to actually
+rerun the code with these different priors. Getting new model code to work can be too hard for homework.</p></li>
 </ol>
 <p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
-<ol start="6" style="list-style-type: decimal">
-<li>Does there appear to be a relationship between the review scores (<code>review_scores_rating</code>) and price? Make a plot and explain what you think might be going on.</li>
-<li>Can you think of any weaknesses with how price is being defined in this dataset that affect the ability to make conclusions about it and its relationship with location and rating?<br />
-</li>
-<li>[<strong>extracredit</strong>] Come up with a proposal using other variables present in the data set to ameliorate one or more of the weaknesses identified in 7, and implement it. Choose one of the previous questions and repeat your answer to it to demonstrate if your proposal worked as intended.</li>
+</div>
+<div id="hierarchical-binomial-model" class="section level2">
+<h2>2. Hierarchical binomial model</h2>
+<p>The data comes from a table in the textbook, it is included in the R code file.
+We will be working with the number of
+bicycles and the number of total vehicles. The first set of numbers is 16/58, where 16
+= number bicycles, and 58=number other vehicles, making (16+58) total vehicles in
+that location. We have J=10 locations.</p>
+<p>The file bicycles-snippet.R is included in the assignment repository.
+We will be using log(α/β) and log(α+β) as the transformed parameters of interest,
+as we did in class. The marginal posterior for log(α + β) and log(α/β) could be found by transformation (look in the notes) and it is computed in the code already.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Write out a model in which the number of bicycles at location j (for j = 1, · · · , J)
+is <span class="math inline">\(y_j\)</span> ∼ Binomial(<span class="math inline">\(n_j\)</span> , <span class="math inline">\(θ_j\)</span> ), and <span class="math inline">\(θ_j\)</span> ∼ Beta(α, β). Use the noninformative prior
+for α and β that we discussed in class for the rat tumor example. That is,
+<span class="math inline">\(p(α, β) = (α + β)^{−5/2}\)</span> . Write down three posterior distributions:</li>
+<li>p(θ, α, β | y)
+ii, p(θ | α, β, y)</li>
+</ol>
+<ol start="3" style="list-style-type: lower-roman">
+<li>p(α, β | y).</li>
+</ol>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Compute the marginal posterior density of log(α + β) and
+log(α/β) on a grid, and make a contour plot of this joint posterior. You should
+figure out reasonable values to use for the boundary of the grid. Show your process
+of finding decent values by including contour plots using your initial grid. You
+can make use of the code snippet, bicycles-snippet.R, which sets up the program
+for you and includes the contour plot. You just have to come up with reasonable
+values.</p></li>
+<li><p>Draw 5000 samples from the joint posterior distribution, by drawing from
+p(log(α/β), log(α + β) | y), then from p(θ | α, β, y).
+(You have done something close to this already and there is example code in the notes and posted in Blackboard.)
+Summarize the 5000 draws of
+log(α/β), log(α + β), and <span class="math inline">\(θ_j\)</span> for each location j + 2 in plots.</p></li>
+<li><p>How do the draws of <span class="math inline">\(θ_j\)</span> , for each j, compare with the raw proportions? Ideally
+you would summarize this by a plot (example code in the notes and posted in Blackboard) and please comment on the comparison.</p></li>
 </ol>
 <p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you’re happy with the final state of your work.</em></p>
 </div>
-<div id="rubric-26-points-total" class="section level1">
-<h1>Rubric: 26 points total</h1>
+</div>
+<div id="rubric-80-points-total" class="section level1">
+<h1>Rubric: 80 points total</h1>
 <ul>
-<li>21 points for responses to Ex1-Ex7 @ 3 points per Ex.</li>
-<li>5 points for consistent and informative commit messages</li>
-<li>Up to 5 points extra credit available for Ex 8. Though it needs to be an excellent answer to get all five points!</li>
+<li>45 points for Bioassay</li>
+<li>30 points for Hierarchical binomial model</li>
+<li>5 points for at least 3 consistent and informative commit messages</li>
 </ul>
 </div>
 
