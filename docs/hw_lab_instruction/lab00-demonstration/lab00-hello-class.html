@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+
+
+<title>Lab 00 - Hello Class!</title>
+
+<script src="lab00-hello-class_files/header-attrs/header-attrs.js"></script>
+<link href="lab00-hello-class_files/tufte-css/tufte.css" rel="stylesheet" />
+<link href="lab00-hello-class_files/tufte-css/envisioned.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="lab.css" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Lab 00 - Hello Class!</h1>
+<h4 class="author">Tanzy Love, based on the course by Andrew McDavid</h4>
+<h4 class="date">2016-09-07 (updated 2026-03-30 by TL)</h4>
+
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>This is a demonstration file to go in lecture 01. I will run through it in front of the class.</p>
+</div>
+<div id="housekeeping" class="section level1">
+<h1>Housekeeping</h1>
+<p><label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote"><span style="display: block;">Your email address is the address tied to your GitHub account and
+your name should be first and last name.</span></span></p>
+<p>Before we can get started we need to take care of some required housekeeping.
+These should only need to be done once, or maybe once a month for the PAT.</p>
+<p>Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your email address and your name.</p>
+<ul>
+<li><p>Install GIT, R, Rstudio (see the Resources on the homepage for links).</p></li>
+<li><p>Open RStudio and go to the <strong>Console</strong> for these one-off bits.
+Run these lines in interactive mode (you can copy-and-paste them but you’ll have to make them specific to yourself).</p></li>
+</ul>
+<pre><code>  library(usethis, gitcreds)
+
+  #if that doesn&#39;t work, install the packages and try the previous    line again.
+  install.packages(&quot;usethis&quot;)  #These should only be needed once
+  install.packages(&quot;gitcreds&quot;) 
+  </code></pre>
+<ul>
+<li>Let git know about your github username and email by editing this as appropriate and entering it into the Console:</li>
+</ul>
+<p>I put</p>
+<pre><code>usethis::use_git_config(
+scope = &quot;user&quot;,
+user.name = &quot;Tanzy Love&quot;,
+user.email = &quot;Tanzy_Love@urmc.rochester.edu&quot;)</code></pre>
+<ul>
+<li><p>Next, we need to set up a personal access token so that you can write from rstudio cloud to github. To do this, enter use the following command into the Console:</p>
+<pre><code>usethis::create_github_token()</code></pre>
+<p>Follow the instructions. <strong>Be sure to save the PAT in a password manager</strong>, you will have to re-enter it, depending on your set-up.</p>
+<pre><code>gitcreds::gitcreds_set()</code></pre>
+<p>paste in the token from the last step. If you picked this token to have a 6 month expiration, you shouldn’t have to do this again.</p></li>
+</ul>
+</div>
+<div id="getting-started" class="section level1">
+<h1>Getting started</h1>
+<p>Each of your assignments will begin with the following steps. You can always refer back to this lab (or other labs) for a detailed list of the steps involved for getting started with an assignment.</p>
+<p>This part you will do every time you have an assignment or lab.</p>
+<p>
+<span class="marginnote shownote">
+<!--
+<div class="figure">-->
+<img src="img/copy-assignment-repo-link.png" alt=" " width="420"  />
+<!--
+<p class="caption marginnote">--> <!--</p>-->
+<!--</div>--></span>
+</p>
+<ul>
+<li><p>Click on the assignment link that you should have received in your email to create your GitHub repository (which we’ll refer to as “repo” going forward) for the assignment. This repo contains a template you can build on to complete your assignment.</p></li>
+<li><p>Note that it’s not in <em>your</em> GitHub folder, it’s in the coursespace (so I can see it but you can’t see each other’s) and it is a copy of the template that I made to be here.</p></li>
+<li><p>On GitHub, click on the green <strong>Clone or download</strong> button, select <strong>Use HTTPS</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with HTTPS</strong> as in the image below). Click on the clipboard icon to copy the repo URL. It will start with the class “bst-urmc” and end with your username “tanzylove” (for me) and the middle is based on what the assignment is named.</p></li>
+<li><p>Go to RStudio clone the assignment repository. This is the one copy and paste into RStudio part that you will do each time you start to work.</p></li>
+</ul>
+<pre><code>###  #&#39;s comment out lines in R code
+
+#you need to change this to the right repository and location for you and your local machine
+usethis::create_from_github(&quot;https://github.com/bst-urmc/setup-check-assignment-0-tanzylove&quot;,
+   destdir=&quot;~/Documents/work/teaching/BST430/&quot;)
+</code></pre>
+<ul>
+<li>Copy and paste the URL of your assignment repo into the function</li>
+<li>If you need to login to github, a login box should pop up.</li>
+<li>It opens up a new copy of RStudio with all the files from the repository in question.</li>
+</ul>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>Now, for the statistics!!!</p>
+<p>Read in some data.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>hotdogs<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">&quot;files/Hdcalsod.TXT&quot;</span>, <span class="at">header=</span>T)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">colnames</span>(hotdogs)</span></code></pre></div>
+<pre><code>## [1] &quot;Type&quot;     &quot;Calories&quot; &quot;Sodium&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>hotdogs<span class="sc">$</span>Calories</span></code></pre></div>
+<pre><code>##  [1] 186 181 176 149 184 190 158 139 175 148 152 111 141 153 190 157 131 149 135
+## [20] 132 173 191 182 190 172 147 146 139 175 136 179 153 107 195 135 140 138 129
+## [39] 132 102 106  94 102  87  99 107 113 135 142  86 143 152 146 144</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">attach</span>(hotdogs)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">plot</span>(Calories, Sodium, <span class="at">xlab=</span><span class="st">&quot;Calories&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Sodium&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/hotdogs-1.png" width="672"  /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">cor</span>(Calories, Sodium)</span></code></pre></div>
+<pre><code>## [1] 0.4671387</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">plot</span>(Calories, Sodium, <span class="at">xlab=</span><span class="st">&quot;Calories&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Sodium&quot;</span>, </span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="at">col=</span><span class="fu">factor</span>(Type), <span class="at">pch=</span><span class="dv">16</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="fu">levels</span>(<span class="fu">factor</span>(Type)), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pch=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/hotdogs-2.png" width="672"  /></p>
+<p>Let’s try a different data set. This one about 50 states.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>hsgrads<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">&quot;files/raingrad.TXT&quot;</span>, <span class="at">header=</span>T, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">attach</span>(hsgrads)</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="fu">plot</span>(Rain, Education, </span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;Rainfall&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Average Grade Level&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/raingrad-1.png" width="672"  /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">cor</span>(Rain, Education)</span></code></pre></div>
+<pre><code>## [1] -0.4758416</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">args</span>(cor)</span></code></pre></div>
+<pre><code>## function (x, y = NULL, use = &quot;everything&quot;, method = c(&quot;pearson&quot;, 
+##     &quot;kendall&quot;, &quot;spearman&quot;)) 
+## NULL</code></pre>
+<p>And one final set of flying times.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>delta<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">&quot;files/Deltafly.TXT&quot;</span>, <span class="at">header=</span>T)</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="fu">attach</span>(delta)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="fu">hist</span>(Miles, <span class="at">xlab=</span><span class="st">&quot;Distance (Miles)&quot;</span>)</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/delta-1.png" width="672"  /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">hist</span>(DepHr, <span class="at">main=</span><span class="cn">NULL</span>, <span class="at">xlab=</span><span class="st">&quot;Departure Hour (24hour)&quot;</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">24</span>))</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/delta-2.png" width="672"  /></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">hist</span>(TravTime, <span class="at">main=</span><span class="cn">NULL</span>, <span class="at">xlab=</span><span class="st">&quot;Travel Time (Hours)&quot;</span>)</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/delta-3.png" width="672"  /></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">plot</span>(Miles, TravTime, <span class="at">xlab=</span><span class="st">&quot;Distance (Miles)&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Travel Time (Hours)&quot;</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">cor</span>(Miles, TravTime)</span></code></pre></div>
+<pre><code>## [1] 0.9850281</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>reg.line<span class="ot">=</span><span class="fu">lm</span>(TravTime<span class="sc">~</span>Miles) <span class="co">#calcuate the regression line for the Delta data</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="fu">summary</span>(reg.line)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = TravTime ~ Miles)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.81510 -0.13912 -0.03479  0.14409  0.79419 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept) 6.463e-01  4.340e-02   14.89   &lt;2e-16
+## Miles       1.894e-03  3.349e-05   56.56   &lt;2e-16
+## 
+## Residual standard error: 0.2662 on 98 degrees of freedom
+## Multiple R-squared:  0.9703, Adjusted R-squared:   0.97 
+## F-statistic:  3199 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">abline</span>(reg.line, <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/delta-4.png" width="672"  /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co">#make both plots appear together</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">plot</span>(reg.line, <span class="at">which=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)  <span class="co"># plot residual assumption plots</span></span></code></pre></div>
+<p><img src="lab00-hello-class_files/figure-html/delta-5.png" width="672"  /></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co">#make only one plot appear at a time</span></span></code></pre></div>
+<div id="make-a-change" class="section level2">
+<h2>Make a change:</h2>
+<p>Make a new file in RStudio or change the name in the header of this “lab00-hello-class.Rmd” file.</p>
+</div>
+<div id="commiting-changes" class="section level2">
+<h2>Commiting changes:</h2>
+<ul>
+<li><p>Then Go to the Git pane (next to Environment and History) in your RStudio.</p></li>
+<li><p>If you created a new file, you shoud see it’s name here.</p></li>
+<li><p>If you have made changes to your Rmd file, you should see it listed here. Click on the change to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state that includes your changes.</p></li>
+<li><p>If you’re happy with these changes, write “Update author name” in the <strong>Commit message</strong> box and hit <strong>Commit</strong>.</p></li>
+</ul>
+<div class="figure fullwidth">
+<img src="img/update-author-name-commit.png" alt=" " width="889"  />
+<p class="caption marginnote shownote">
+</p>
+</div>
+<p>You don’t have to commit after every change, this would get quite cumbersome. You should consider committing states that are <em>meaningful to you</em> for inspection, comparison, or restoration. In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
+</div>
+<div id="pushing-changes" class="section level2">
+<h2>Pushing changes:</h2>
+<p>Now that you have made an update and committed this change, it’s time to push these changes to the web! Or more specifically, to your repo on GitHub. Why? So that others can see your changes. And by others, we mean the course teaching team (your repos in this course are private to you and us, only).</p>
+<p>In order to push your changes to GitHub, click on <strong>Push</strong>. This will prompt a dialogue box where you first need to enter your user name, and then your PAT.</p>
+<p><em>Yay, you’re done! Commit all remaining changes, use the commit message “Done with Lab 0!”, and push. Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.</em></p>
+</div>
+<div id="rubric-0-points-possible" class="section level2">
+<h2>Rubric (0 points possible)</h2>
+<p>You may not be able to do this on your own after lecture 0, so don’t worry about it!!</p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

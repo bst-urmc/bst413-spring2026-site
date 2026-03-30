@@ -32,6 +32,6 @@ TH 11:00-12:40, SRB 1402
     1. [install GIT](https://happygitwithr.com/install-git.html)
     2. [install *base* R](https://cran.r-project.org/)
     3. [install RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-    * Lab 0 [instructions](hw_lab_instruction/lab00-demonstration/lab00-hello-class.html) and repo (accept GH classroom invite in Blackboard).
-    * HW 1 assigned.  [instructions](hw_lab_instruction/hw-3/hw3-spring2026.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/DSGIBgl4)).  Due 5pm EDT, Sept 16.
-<!--     * HW 1 [solutions](hw_lab_instruction/hw-3/hw3.html) -->
+    * Example: Lab 0 [instructions](hw_lab_instruction/lab00-demonstration/lab00-hello-class.html) and repo (accept GH classroom invite in Blackboard).
+    * HW 3 assigned.  [instructions](hw_lab_instruction/hw-3/hw3-spring2026.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/DSGIBgl4)).  Due 5pm EDT, April 14.
+<!--     * HW 3 [solutions](hw_lab_instruction/hw-3/hw3.html) -->
