@@ -167,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 
 <h1 class="title toc-ignore">Homework 03</h1>
 <h4 class="author">Tanzy Love, based on the course by Sally Thurston</h4>
-<h4 class="date">2026-03-29 (updated: 2026-03-30)</h4>
+<h4 class="date">2026-03-29 (updated: 2026-04-06)</h4>
 
 
 
@@ -200,7 +200,7 @@ The output will be in the file markdown <code>.md</code> file with the same name
 <h2>Packages</h2>
 <p>It’s usually a good idea to install packages in the command line and to load them in a header so you can see what they are.
 You can load them by running the following in your Console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 </div>
 <div id="bioassay" class="section level2">
 <h2>1. Bioassay</h2>
@@ -244,19 +244,18 @@ as we did in class. The marginal posterior for log(α + β) and log(α/β) could
 <li>Write out a model in which the number of bicycles at location j (for j = 1, · · · , J)
 is <span class="math inline">\(y_j\)</span> ∼ Binomial(<span class="math inline">\(n_j\)</span> , <span class="math inline">\(θ_j\)</span> ), and <span class="math inline">\(θ_j\)</span> ∼ Beta(α, β). Use the noninformative prior
 for α and β that we discussed in class for the rat tumor example. That is,
-<span class="math inline">\(p(α, β) = (α + β)^{−5/2}\)</span> . Write down three posterior distributions:</li>
-<li>p(θ, α, β | y)
-ii, p(θ | α, β, y)</li>
+<span class="math inline">\(p(α, β) = (α + β)^{−5/2}\)</span>.</li>
 </ol>
-<ol start="3" style="list-style-type: lower-roman">
-<li>p(α, β | y).</li>
-</ol>
+<p>Write down three posterior distributions:
+i. p(θ, α, β | y)
+ii. p(θ | α, β, y)
+iii. p(α, β | y)</p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li><p>Compute the marginal posterior density of log(α + β) and
 log(α/β) on a grid, and make a contour plot of this joint posterior. You should
 figure out reasonable values to use for the boundary of the grid. Show your process
 of finding decent values by including contour plots using your initial grid. You
-can make use of the code snippet, bicycles-snippet.R, which sets up the program
+can make use of the code snippet, bicycles-snippet.R, which calculates the probabilities on the right scale
 for you and includes the contour plot. You just have to come up with reasonable
 values.</p></li>
 <li><p>Draw 5000 samples from the joint posterior distribution, by drawing from
