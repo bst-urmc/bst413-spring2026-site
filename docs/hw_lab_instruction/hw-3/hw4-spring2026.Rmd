@@ -1,0 +1,102 @@
+---
+title: "Homework 04"
+author: "Tanzy Love, based on the course by Sally Thurston"
+institute: "U of Rochester"
+date: "2026-04-13 (updated: `r Sys.Date()`)"
+output: 
+  tufte::tufte_html:
+    css: ../hw.css
+    tufte_variant: "envisioned"
+    highlight: pygments
+link-citations: yes
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+  eval = FALSE,
+  out.width = "80%",
+  fig.asp = 0.618,
+  fig.width = 6
+)
+```
+
+
+# Getting started
+
+*  Accept the github classroom assignment
+*  Go to the bst-urmc GitHub organization and locate your homework repo, which should be named `hw-4-YOUR_GITHUB_USERNAME`. 
+*  Grab the URL of the repo, and start a new project from Github in RStudio. 
+*  Open the R Markdown document `hw-04.Rmd` and Knit it.
+Make sure it compiles without errors.
+The output will be in the file markdown `.md` file with the same name.  (You'll turn in the .md file, and the plots generated along with it).
+
+
+## 1. Hierarchical normal model: 8 schools
+
+We will consider the hierarchical normal model, using the 8 schools example as discussed in class.  We will use three different versions with different priors. You should use the fake schools dataset, *schools2.txt* (which is not the same as the fake data in the notes) and you may use the R code from class, *schools-classnotes.R* Both files should be in the directory when you accep the assignment.
+
+In what follows, we will always assume the likelihood is :
+\begin{eqnarray*}
+\bar{y}_{j} \mid \theta_j & \sim & N(\theta_j, \sigma^2_{j})\\
+\end{eqnarray*}
+
+a. Assume $\theta_j \sim N(\mu, \tau^2)$ and unkown priors on $\mu$ and $\tau$. Write down the full conditional posterior distributions for $(\mu, \tau^{-2}, \theta)$ (10 parameters). Recall, the full conditional for $\mu$ is $p(\mu|\tau^2, \theta, y)$.
+b. Program a Gibbs Sampler using the full conditionals you derived above.  This will be a starting point for to help you modularize as least some of the code required below.   
+You may initially assume that $p(\mu, \tau) \propto 1$.
+c. Print the dataset, for reference.
+d. Take 5000 draws from your Gibbs Sampler (either as one chain or multiple chains), modified for each scenario below. The 3 scenarios are:
+
+    I. $\theta_j \sim N(0, \infty)$
+
+    II. $\theta_j \sim N(\mu, 0), p(\mu) \propto 1$.
+
+    III. $\theta_j \sim N(\mu, \tau^2), p(\mu, \tau) \propto 1$.
+
+e. For each of the 3 cases:
+    i.  Calculate the posterior probability that school A has a better coaching program than school E.  I am asking for Pr($\theta_A > \theta_E \mid y$) where $\theta_A$ is $\theta_j$ for school A, and $\theta_E$ is $\theta_j$ for school E.
+    ii. Plot $E(\theta_j \mid y)$ with 95\% posterior intervals, versus $\bar{y}_j$.  (eight intervals versus 8 points, as in the notes)
+    iii. Print the mean,
+95\% posterior interval (lower, upper), and the length of the interval (upper minus lower) for each of the 8 $\theta_j$'s.
+    iv. Plot the traceplots of $\theta_E$. Comment on their appearance with respect to convergence diagnostics.
+    v. Calculate convergence diagnostics and explain their interpretation. Is 5000 samples enough?
+
+f. Comment on the differences in these results across the 3 scenarios
+and remark on why they are the same, similar or different.  I hope you will go into some detail here as there are many comparisons to make.
+
+
+🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
+
+## 2. Model checking
+
+In class (notes page 120) we considered a sequence of binary outcomes, $y_1, \cdots, y_{20}$, which we could model as iid Bernoulli($\theta$). The observed data (with 20 observations) are:
+1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0.
+
+We will consider the test statistic, $T(y)$ = number of switches between 0 and 1 (or vice versa).  In the observed data, $T(y)=3$.   
+Unlike the notes, we will use a Beta(0,0) prior on $\theta$, the probability of a 1.
+
+a. Write code to sample from the posterior predictive distribution $y^{rep}$ to evaluate whether $T(y)$ is unusual if the data was generated as $iid$ Bernoulli observations. 
+b. Make a histogram of 1000 draws of $T(y^{rep})$ and superimpose the observed value.  
+c. What is $p_B$?  
+
+🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
+
+## 3. Effective number of parameters, DIC, and WAIC
+
+a. Using the fake schools data (in *schools2.txt*) and the full hierarchical model (scenario III above), calculate 
+
+    i. the effective number of parameters based on the deviance information criteria, $\hat{p}_{DIC}$; 
+    ii. the DIC; 
+    iii. the effective number of parameters based on WAIC, $\hat{p}_{WAIC}$ and 
+    iv. the WAIC.  
+
+b. Repeat the previous part using the real schools data (*schools.txt*). You only have to run scenario (III) with this dataset.
+c. Focusing on the effective number of parameters based on the DIC, comment on the differences in this number for the two datasets.  Does it make sense that one dataset has a larger number of effective parameters?  Why?
+
+🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*
+
+# Rubric: 120 points total
+
+* 80 points for Hierarchical normal model
+* 15 points for Model checking
+* 20 points for DIC and WAIC
+* 5 points for at least 3 consistent and informative commit messages
