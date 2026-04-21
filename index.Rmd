@@ -34,7 +34,7 @@ TH 11:00-12:40, SRB 1402
     3. [install RStudio](https://www.rstudio.com/products/rstudio/download/#download)
 * Example: Example Lab 0 from BST 430: [instructions](hw_lab_instruction/lab00-demonstration/lab00-hello-class.html) and repo [invite](https://classroom.github.com/a/LzRrMHr2).
 * HW 3 assigned.  [instructions](hw_lab_instruction/hw-3/hw3-spring2026.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/nYoS9qml)).  Due 5pm EDT, April 14.
-<!--     * HW 3 [solutions](hw_lab_instruction/hw-3/hw3.html) -->
+      * HW 3 [solutions](hw_lab_instruction/hw-3/hw03.html)
 * HW 4 assigned.  [instructions](hw_lab_instruction/hw-4/hw4-spring2026.html) 
 and repo (accept GH classroom [invite](https://classroom.github.com/a/8XnJvKuL)).  Due 5pm EDT, April 28.
 <!--     * HW 4 [solutions](hw_lab_instruction/hw-4/hw4.html) -->
